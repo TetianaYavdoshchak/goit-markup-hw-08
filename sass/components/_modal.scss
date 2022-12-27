@@ -1,0 +1,199 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0) rotate(0);
+}
+.modal {
+  width: 100%;
+  max-width: 450px;
+  max-height: 609px;
+  padding: 40px;
+  background-color: $primary-color;
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1) rotate(-360deg);
+  transition: transform 250ms linear;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: 450px;
+    max-height: 609px;
+    width: 100%;
+  }
+
+  @media screen and(min-width: 1200px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: 528px;
+    max-height: 581px;
+  }
+  &__title {
+    margin-bottom: 12px;
+
+    @include font(700, 20px, 1.15, 0.03em);
+    text-align: center;
+
+    color: $title-text-color;
+  }
+}
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  @extend %flex;
+
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: $primary-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+  &__icons {
+    fill: currentColor;
+  }
+}
+.input {
+  margin-bottom: 10px;
+  label {
+    display: block;
+    margin-bottom: 4px;
+    color: $primary-text-color;
+  }
+}
+.input__thumb {
+  position: relative;
+}
+.input__modal {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+    & + svg {
+      fill: $accent-color;
+    }
+  }
+}
+.input__text {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  resize: none;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus,
+  &:hover {
+    border-color: $accent-color;
+  }
+  &::placeholder {
+    @include font(400, 12px, 1.17, 0.01em);
+
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.input__icons {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-politic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.modal-politic__label::before {
+  content: '';
+  width: 16px;
+  height: 15px;
+  border: 2px solid $title-text-color;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+label.modal-politic__label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  @include font(400, 14px, 1.71, 0.03em);
+  color: $primary-text-color;
+  @media screen and(max-width: 1199px) {
+    margin-left: 8px;
+    font-size: 12px;
+  }
+}
+.modal-politic__text {
+  padding: 0;
+  margin: 0;
+  color: $accent-color;
+}
+.modal-politic__check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  &:checked + label::before {
+    border: none;
+    background-image: url(../images/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $active-bcg-color;
+  }
+}
+.input_btn {
+  @extend %flex;
+  @extend %btn;
+  padding: 10px 52px;
+  margin-left: auto;
+  margin-right: auto;
+
+  cursor: pointer;
+}

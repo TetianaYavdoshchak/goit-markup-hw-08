@@ -1,0 +1,19 @@
+.header {
+  border-bottom: 1px solid $primary-border-color;
+  .list {
+    @include font(500, 14px, 1.14, 0.02em);
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    @media screen and(max-width:767px) {
+      position: relative;
+      height: 60px;
+    }
+    & .menu-toggle {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+    }
+  }
+}
