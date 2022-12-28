@@ -1,4 +1,4 @@
-.mobile-soc, .input_btn, .btn-close, .submit__btn, .social__link--inverse, .clients__link, .social__link, .social, .function__title, .features__icons, .features__list, .contacts__link {
+.input_btn, .btn-close, .submit__btn, .social__link--inverse, .clients__link, .social__link, .social, .function__title, .features__icons, .features__list, .contacts__link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1194,7 +1194,6 @@ label.modal-politic__label {
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 48px 40px;
   background-color: #ffffff;
   color: #212121;
   z-index: 999;
@@ -1210,6 +1209,10 @@ label.modal-politic__label {
   right: 15px;
 }
 
+.mobile-menu {
+  margin-top: 48px;
+  margin-left: 40px;
+}
 .mobile-menu__link {
   display: block;
   font-weight: 500;
@@ -1229,6 +1232,9 @@ label.modal-politic__label {
   margin-bottom: 32px;
 }
 
+.mobile-contacts {
+  margin-left: 40px;
+}
 .mobile-contacts .items:not(:last-child) {
   padding-bottom: 32px;
 }
@@ -1245,6 +1251,13 @@ label.modal-politic__label {
   line-height: 1.7;
   letter-spacing: 0.02em;
   color: #757575;
+}
+
+.mobile-soc {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+  margin-bottom: 48px;
 }
 
 .mobile-soc__items {
