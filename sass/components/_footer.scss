@@ -45,13 +45,17 @@
   }
 }
 .address {
-  color: $primary-color;
+  color: rgba(255, 255, 255, 0.6);
 }
 .address__items {
   display: block;
   &:not(:last-child) {
     margin-bottom: 9px;
   }
+}
+.address__link:hover,
+.address__link:focus {
+  color: $accent-color;
 }
 .address__link--color {
   color: $primary-color;

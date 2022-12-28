@@ -87,6 +87,7 @@
     display: block;
     margin-bottom: 4px;
     color: $primary-text-color;
+    @include font(400, 12px, 1.17, 0.01em);
   }
 }
 .input__thumb {
