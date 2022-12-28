@@ -53,17 +53,23 @@
   }
 }
 
-.mobile-menu .link {
-  display: block;
-  @include font(500, 40px, 1.2, 0.02em);
-  text-decoration: none;
-  &:not(:last-child) {
-    margin-bottom: 32px;
+.mobile-menu {
+  &__link {
+    display: block;
+    @include font(500, 40px, 1.2, 0.02em);
+    text-decoration: none;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+    &:hover,
+    &:focus,
+    &--current {
+      color: $accent-color;
+    }
   }
-  &:hover,
-  &:focus {
-    color: $accent-color;
-  }
+}
+.mobile-menu__items:not(:last-child) {
+  margin-bottom: 32px;
 }
 .mobile-contacts {
   & .items:not(:last-child) {
